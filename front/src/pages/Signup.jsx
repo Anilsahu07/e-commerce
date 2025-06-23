@@ -20,7 +20,7 @@ const Signup = () => {
   }
 
   return (
-    <div className='w-screen flex flex-col justify-center gap-5 items-center bg-slate-950 h-[90.5vh] text-white'>
+    <div className='w-screen flex flex-col justify-center gap-5 items-center bg-slate-950 h-[90.5vh]'>
       <form className='w-screen flex flex-col gap-3 items-center p-5 ' action="" onSubmit={handleSubmit(formSubmitHandler)}>
         <input className='rounded text-sm border-b-2 p-2 border-black lg:w-1/3 w-full' {...register("image")} type="url" placeholder='Show your photo' />
           <input className='rounded border-b-2 p-2 text-sm border-black lg:w-1/3 w-full' {...register("username",{required:true})} type="text" placeholder='Enter username' />

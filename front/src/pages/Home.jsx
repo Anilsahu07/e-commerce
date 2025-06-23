@@ -5,7 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { addToCartFunctionality } from '../features/UserSlice'
 
 const Home = () => {
-  const products= useSelector(state=>state.product.products)
+  const products= useSelector(state=>state.product.products)  
+  
   const dispatch= useDispatch()
   const navigate=useNavigate()
   const [toggle, settoggle] = useState(false)
@@ -31,15 +32,17 @@ const addToCart=(id)=>{
  const productData= products.find(pro=> pro.id ===id) 
  if (productData) {
   dispatch(addToCartFunctionality(productData))
-  navigate("/cart")
  }
+ navigate("/")
 }
 
 
 return(
     <div className=" gap-4 flex flex-col items-center justify-center p-2">
-        <div>
-          <h1 className='mt-3 p-2 font-[poppins] text-3xl lg:text-4xl text-center font-semibold flex items-center gap-2 gap-y-0 flex-wrap justify-center'><p className='text-red-600 text-5xl font-semibold flex items-center'>P <p className='text-black lg:text-4xl text-3xl'>urchase</p></p> <p className='text-yellow-600'>your</p> best fit <p className='text-red-600'>!!</p></h1>
+        <div className='flex justify-center w-full text-center'>
+         <h1 className='text-2xl font-[montserra]'>
+          PURCHASE YOUR PRODUCTS !!
+         </h1>
         </div>
         <div className=' flex justify-center items-center flex-wrap gap-3 mt-5'>
           {products.length===0? "Loading":

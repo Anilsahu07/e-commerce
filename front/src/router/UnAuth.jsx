@@ -4,8 +4,7 @@ import { Navigate} from 'react-router-dom'
 
 const UnAuth = ({children}) => {
   const {user}= useSelector(state=>state.user)
-  
-  
+    
   return !user?children :<Navigate to='/'/>
 }
 

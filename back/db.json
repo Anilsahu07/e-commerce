@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": 109.95,
+      "price": "109.9",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
@@ -11,7 +11,7 @@
     {
       "id": "3",
       "title": "Mens Cotton Jacket",
-      "price": "5555555",
+      "price": "55.99",
       "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
@@ -155,12 +155,21 @@
   ],
   "users": [
     {
-      "id": "MgSAkk28hDse0Gg3ZHoh2",
-      "image": "https://wallpapers.com/images/hd/angry-madara-rinnegan-eyes-7x1brgb22tzec4wa.webp",
-      "username": "Cristiano Ronaldo",
-      "email": "cris07@gmail.com",
-      "password": "cristiano",
-      "isAdmin": false,
+      "id": "Q5YG7C3IBgfccrgPtfpva",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt3t1OL5sWmZLvxbeGB6SQ9ayqfS4yZSJLMQ&s",
+      "username": "Stephen Curry",
+      "email": "steph@gmail.com",
+      "password": "steph123",
+      "isAdmin": true,
+      "cart": []
+    },
+    {
+      "id": "GKo1qaS3WX0OeEx9jqjpW",
+      "image": "https://s.yimg.com/ny/api/res/1.2/2sdJUb0jEIPANnB1FRQHTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNztjZj13ZWJw/https://media.zenfs.com/en/athlon_sports_articles_610/16b906494281a587f68ba8b723581c15",
+      "username": "Lebron James",
+      "email": "james@gmail.com",
+      "password": "james123",
+      "isAdmin": true,
       "cart": []
     }
   ]

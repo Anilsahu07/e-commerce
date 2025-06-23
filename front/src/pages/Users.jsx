@@ -25,7 +25,7 @@ const Users = () => {
     <div className='p-3 w-screen text-whit border-t-2'>
         <div className='flex flex-col items-center gap-4 text-center'>
             <h1 className='lg:text-3xl text-3xl font-bold text-black font-[montserrat]'>USER's PROFILE</h1>
-            <div className=' w-screen border-t-4 border-yellow-500 p-2 flex flex-wrap justify-center'>
+            <div className=' w-screen border-t-4 border-yellow-500 p-2 flex flex-wrap justify-center gap-3'>
                 {users.map((users,index)=>(
                     <ul key={index} className='w-fit flex justify-center flex-wrap mt-5'>
                         <li className='w-full lg:w-fit flex flex-col items-center text-center bg-black p-3 rounded-xl font-[poppins] gap-3 text-white hover:scale-95 transition-all duration-300'>

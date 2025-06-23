@@ -25,6 +25,9 @@ const productSlice= createSlice({
           const {id,product}=action.payload
            state.products = state.products.map(e => e.id ===id? product:e);
          
+        },
+        searchProduct:(state,action)=>{
+          state.products= action.payload
         }
     }
 })

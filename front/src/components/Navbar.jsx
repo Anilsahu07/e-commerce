@@ -25,17 +25,38 @@ const Navbar = () => {
     
   }
 
+  
   const divRef= useRef(null)
-
+  const iconRef= useRef(null)
 
   gsap.to(divRef.current,{
-    y:71.5,
+    y:71.1,
     duration:0.3
   })
   
 
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      divRef.current &&
+      !divRef.current.contains(event.target) &&
+      iconRef.current &&
+      !iconRef.current.contains(event.target)
+    ) {
+      settoggle(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
+
+  
+
   return (
-    <div className='flex items-center gap-10 bg-black  lg:h-18 h-18 font-[poppins] text-white lg:w-screen w-screen'>
+    <div className='flex items-center gap-10 bg-black  lg:h-18 h-20 font-[poppins] text-white lg:w-screen w-screen'>
       {user?<div className='w-full flex lg:justify-around justify-start gap-10 items-center lg:p-4 p-4'>
         <div>
           <NavLink className={` active:text-red-400 flex-none hidden lg:flex`} to='/'>Home</NavLink>
@@ -47,15 +68,15 @@ const Navbar = () => {
            <i className="ri-shopping-cart-fill text-4xl text-green-500"></i>
            </NavLink>
            <NavLink className={`active:scale-95 active:text-red-400`} to={`/search`}>
-            <i class="ri-search-line text-3xl"></i>
+            <i className="ri-search-line text-3xl"></i>
            </NavLink>
         </div>
         <div>
             <NavLink onClick={logoutUser} className='bg-red-400 text-white px-3 py-2 rounded lg:flex hidden'>Logout</NavLink>
         </div>
       
-       <NavLink onClick={handleToggle} className='bg-black text-white px-1.5 py-0.5 rounded lg:hidden flex flex-col outline outline-white absolute right-3'>
-          {toggle?<i class="ri-menu-3-line text-2xl"></i>: <i class="ri-menu-line text-2xl"></i> }
+       <NavLink ref={iconRef} onClick={handleToggle} className='bg-black text-white px-1.5 py-0.5 rounded lg:hidden flex flex-col outline outline-white absolute right-3'>
+          {toggle?<i className="ri-menu-3-line text-2xl"></i>: <i className="ri-menu-line text-2xl"></i> }
        </NavLink>
        <div ref={divRef} className='flex flex-col  absolute right-0 top-0'>
           <p className='hidden'></p>
@@ -69,10 +90,10 @@ const Navbar = () => {
       </div>
       :
       <div className='w-full flex justify-center lg:p-4 p-6 items-center gap-10'>
-         <NavLink className={`active:scale-95 active:text-red-400 lg:text-xl text-xl`} to='/signin'>Signin</NavLink>
-       <NavLink className={`active:scale-95 active:text-red-400 lg:text-xl text-xl`} to='/users'>Users</NavLink>
+         <NavLink className={`active:scale-95 active:text-red-400 lg:text-sm text-xl`} to='/signin'>Signin</NavLink>
+       <NavLink className={`active:scale-95 active:text-red-400 lg:text-sm text-xl`} to='/users'>Users</NavLink>
        {/* <NavLink className={`active:scale-95 active:text-red-400`} to='/signup'>Signup</NavLink> */}
-        <NavLink className={`active:scale-95 active:text-red-400 lg:flex hidden lg:text-xl`} to='*'>PageNotFound</NavLink>
+        <NavLink className={`active:scale-95 active:text-red-400 lg:flex hidden lg:text-sm`} to='*'>PageNotFound</NavLink>
          </div>}
         
 
