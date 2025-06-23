@@ -28,10 +28,6 @@ const Navbar = () => {
   const divRef= useRef(null)
 
 
-
-
-
-
   gsap.to(divRef.current,{
     y:71.5,
     duration:0.3
