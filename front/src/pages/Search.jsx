@@ -33,16 +33,16 @@ const Search = () => {
   return (
     <div className='flex flex-col gap-7 w-screen items-center h-auto lg:p-3'>
         <div className='w-screen flex justify-center px-5 mt-3'>
-            <input className='border lg:w-1/3 w-3/4 outline p-1 rounded' onChange={(e)=>setsearch(e.target.value)} type="text" placeholder='Search your products....'/>
+            <input className='border lg:w-1/3 w-3/4 outline lg:p-1 p-0.5 rounded' onChange={(e)=>setsearch(e.target.value)} type="text" placeholder='Search your products....'/>
         </div>
         <div className='w-screen flex flex-wrap justify-center p-4 gap-7'>
        {search?filterSearchedProducts.map(e=>(
-            <ul key={e.id} className='w-[300px] flex flex-col items-center text-center p-4 gap-2 bg-yellow-300 rounded-xl font-[poppins]'>
+            <ul key={e.id} className='w-[300px] h-fit flex flex-col items-center text-center p-4 gap-2 bg-yellow-300 rounded-xl font-[poppins]'>
                 <img className='lg:w-full w-full h-56' src={e.image} alt="" />
                 <h1 className='text-2xl font-bold mt-3 font-[montserrat]'>{e.title}</h1>
-                <h1 className='text-xl font-light'>{e.price}</h1>
+                <h1 className='text-xl text-blue-600'>₹{e.price}</h1>
                 <h1 className='text-xl font-semibold'>{e.category}</h1>
-                <h1 className='text-xl'>{e.description.slice(0,80)}</h1>
+                <h1 className='text-xl font-light'>{e.description.slice(0,60)}</h1>
             </ul>
         )):<p className='text-xl'>No Data Found !!</p>
        }

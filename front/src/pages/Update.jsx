@@ -32,7 +32,7 @@ const Update = () => {
    }
 
   return (
-    <div className='w-screen flex flex-col justify-center gap-5 items-center bg-slate-950 h-[90.5vh]'>
+    <div className='w-screen flex flex-col justify-center gap-5 items-center bg-slate-950 h-[92vh]'>
        <form action="" className='w-screen flex flex-col justify-center gap-5 items-center p-5' onSubmit={handleSubmit(UpdateHandler)}>
             <input className='border-b-2 rounded p-2 text-sm lg:w-1/3 w-full ' {...register("image")} type="url" placeholder='Put Image URL' />
             <input className='border-b-2 rounded p-2 text-sm lg:w-1/3 w-full ' {...register("title")} type="text" placeholder='Enter Product name' />

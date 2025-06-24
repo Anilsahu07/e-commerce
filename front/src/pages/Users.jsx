@@ -33,6 +33,7 @@ const Users = () => {
                             <h1 className='flex lg:gap-3 gap-2 items-center'><strong className='text-white text-opacity-100 text-xl'>USERNAME:</strong>{users.username}</h1>
                             <p className='flex gap-3 items-center'><strong className='text-white text-opacity-100 text-xl'>EMAIL:</strong>{users.email}</p>
                             <p className='flex gap-3 items-center'><strong className='text-white text-opacity-100 text-xl'>PASSWORD:</strong>{"*".repeat(users.password?.length)}</p>
+                             <p className='flex gap-3 items-center'><strong className='text-white text-opacity-100 text-xl'>Gender:</strong>{users.gender}</p>
                             <div className='w-full flex justify-around mt-4'>
                                 <button type='button' className='px-3 py-2 bg-black text-white text-sm rounded font-[montserrat] hover:bg-white hover:text-black hover:font-normal outline' onClick={()=>deletedUser(users.id)}>Delete</button>
                                 <button onClick={()=>updateingUser(users.id)} type='button' className='px-3 py-2 bg-black text-white text-sm rounded font-[montserrat] hover:bg-white hover:text-black hover:font-normal outline'>Edit</button>

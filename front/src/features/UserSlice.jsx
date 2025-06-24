@@ -30,7 +30,7 @@ const userSlice= createSlice({
         },
         updateUser:(state,action)=>{
             const {id,updatedUser}= action.payload
-            state.users = state.users.map(user =>user.id ===id? updatedUser:user)
+            state.users = state.users.map(u=>u.id===id?updatedUser:u)
             localStorage.setItem("users", JSON.stringify(state.users))
            
         },
@@ -46,7 +46,7 @@ const userSlice= createSlice({
                  state.user.cart.push({...item, quantity:1,price:price,totalPrice:price})
                  toast.success("Added to Cart")
             }
-            localStorage.setItem("user", JSON.stringify(state.user))
+            localStorage.setItem("user", JSON.stringify(state.users))
         },
 
         addtheQuantity:(state,action)=>{
@@ -66,7 +66,7 @@ const userSlice= createSlice({
             const price= Number(item.price)
             const isExist=state.user.cart.find(p=>p.id===item.id)
 
-            if (isExist) {
+            if (isExist.quantity!==0) {
                 isExist.totalPrice= isExist.totalPrice- price
                 isExist.quantity-=1
             }

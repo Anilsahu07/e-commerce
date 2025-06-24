@@ -15,6 +15,7 @@ const Users= lazy(()=>import("../pages/Users"))
 const Cart= lazy(()=>import("../pages/Cart"))
 const UserUpdate= lazy(()=>import("../pages/UserUpdate"))
 const Search= lazy(()=>import("../pages/Search"))
+const Profile= lazy(()=>import("../pages/Profile"))
 
 
 const MainRoutes = () => {
@@ -26,12 +27,14 @@ const MainRoutes = () => {
         <Route path='/' element={<Auth> <Home/></Auth>}></Route>
         <Route path='/about' element={<Auth><About/></Auth>}/>
         <Route path='/search' element={<Auth><Search/></Auth>}/>
+        <Route path='/profile' element={<Auth><Profile/></Auth>}/>
+        {/* <Route path='/users' element={<Auth><Users/></Auth>}/> */}
 
         {/* <Route path='/update' element={<Update/>}/> */}
         {/* <Route path='/settings' element={<Settings/>}/> */}
         <Route path='/userupdate/:id' element={<UserUpdate/>}/>
         {/* <Route path='/' element={<Home/>} /> */}
-        <Route path='/users' element={<Users/>}/>
+        <Route path='/users' element={<UnAuth><Users/></UnAuth>}/>
         <Route path='/signup' element={<UnAuth><Signup/></UnAuth>}/>
         {/* <Route path='/about' element={<About/>} /> */}
         <Route path='/signin' element={<UnAuth><Signin/></UnAuth>}/>

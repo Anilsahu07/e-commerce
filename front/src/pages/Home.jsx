@@ -32,8 +32,8 @@ const addToCart=(id)=>{
  const productData= products.find(pro=> pro.id ===id) 
  if (productData) {
   dispatch(addToCartFunctionality(productData))
+  navigate("/")
  }
- navigate("/")
 }
 
 

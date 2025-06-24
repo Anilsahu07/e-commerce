@@ -30,7 +30,7 @@ const Cart = () => {
   return (
     <div className=' flex flex-wrap gap-5 p-5 items-center w-screen justify-center'>
         {cart.cart.length===0?<p className='text-center text-2xl font-semibold w-full flex items-center justify-center'>No Product Added in the Cart</p>:cart?.cart?.map((e,i)=>(
-          <ul key={i} className=' border flex h-fit text-center justify-center lg:w-fit flex-wrap border-blue-400 rounded-2xl mt-5'>
+          <ul key={i} className=' border flex h-fit text-center justify-center lg:w-fit flex-wrap outline rounded-2xl mt-5'>
               <li className=' h-fit flex flex-col items-center p-2 gap-2 font-[montserrat] break-all'>
                 <img className='w-1/2 h-40 rounded' src={e.image}/> 
                 <h2 className='flex flex-col text-3xl font-semibold'>{e.title.slice(0,27)}</h2>

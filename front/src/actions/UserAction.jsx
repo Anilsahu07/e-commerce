@@ -1,11 +1,12 @@
 import axios from '../api/ApiConfig'
 import { deleteUser, login,updateUser, usersData } from '../features/UserSlice';
-import {toast,} from 'react-toastify'
+import {toast} from 'react-toastify'
 
 
 export const signUpUser=(user)=>async(dispatch,getState)=>{
     try {
-       const {data}= await axios.post("/users",user)
+      console.log(user);
+       const {data}= await axios.post("/users",user)  
        dispatch(usersData(data))
        console.log("User Registered");
        toast.success("User Created")
@@ -13,7 +14,6 @@ export const signUpUser=(user)=>async(dispatch,getState)=>{
         console.log(error);
       }
     }
-    
     
     export const signInUser=(user)=>async(dispatch,getState)=>{
       
@@ -53,12 +53,13 @@ export const deleteUsers=(id)=>async(dispatch)=>{
     }
 }
 
-export const updatedUsers=(users,id)=>async(dispatch)=>{    
+export const updatedUsers=(users,id)=>async(dispatch)=>{  
+  console.log(users,id);
+   
   try {
     const {data}=await axios.patch(`/users/${id}`,users)
     dispatch(updateUser({id:id,updatedUser:data}))
   } catch (error) {
     console.log(error);
-    
   }
 }

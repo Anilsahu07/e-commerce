@@ -17,7 +17,7 @@ const Signin = () => {
 
 
   return (
-    <div className='w-screen flex flex-col justify-center gap-5 items-center bg-slate-950 h-[90.5vh]'>
+    <div className='w-screen flex flex-col justify-center gap-5 items-center bg-slate-950 h-[92vh]'>
       <form className=' flex flex-col gap-3 items-center justify-center p-5 w-full' action="" onSubmit={handleSubmit(formSubmitHandler)}>
           <input className='rounded border-b-2 p-2 border-black lg:w-1/3 w-full' {...register("email", {required:true})} type="email" placeholder='Enter email' />
           <input className='rounded border-b-2 p-2 border-black lg:w-1/3 w-full' {...register("password", {required:true})} type="password" placeholder='Enter password' />
